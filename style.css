@@ -1,0 +1,119 @@
+/* ---------- CATEGORY PAGE LAYOUT ---------- */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: #fff;
+  color: #555;
+}
+
+/* Page container */
+.category-page {
+  padding: 100px 20px 80px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main title */
+.category-page h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  color: #b04b6a;
+  font-weight: 600;
+}
+
+/* Grid for categories */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  grid-auto-rows: auto; 
+  gap: 25px; 
+  justify-content: center; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Category cards */
+.category-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 15px;
+  padding: 20px;
+  width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Category images */
+.category-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Category text */
+.category-card h3 {
+  font-size: 1.2rem;
+  color: #444;
+  margin: 0;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers all inner elements */
+  gap: 5px; /* spacing between icons, price, and name */
+}
+
+.product-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+.product-price {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 5px 0 0 0;
+}
+
+.icons {
+  display: flex;
+  gap: 8px;
+  justify-content: center; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on smaller screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns mobile */
+  }
+}
+
+@media (max-width: 500px) {
+  .category-grid {
+    grid-template-columns: 1fr; /* 1 column small screens */
+  }
+}

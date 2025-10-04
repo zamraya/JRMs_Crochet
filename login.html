@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background: linear-gradient(135deg, #FAE8ED, #FDD5DF);
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            backdrop-filter: blur(6px);
+        }
+
+        .login-header {
+           width: 50%;
+           padding: 15px 20px;
+           background: transparent;
+           backdrop-filter: blur(6px);
+           position: fixed;   
+           top: 0;
+           left: 0;
+           display: flex;
+           align-items: center;
+        } 
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 30%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .back-button {
+            padding: 10px 15px;
+            border: none;
+            background: white;
+            border-radius: 5px;
+            color: black;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+        .back-button:hover {
+            background: #ddd;
+        }
+        
+        .login-box {
+            flex: 1;
+            padding: 30px;
+            background: linear-gradient(120deg, #FAE8ED, #FDD5DF, #FFE6EE, #FFA2B9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-width: 300px;
+        }
+        .login-box h2 {
+            margin: 0 0 20px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        .login-box input[type="text"], 
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: none;
+            background: white;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .login-box input[type="submit"] {
+            width: 50%;             
+            padding: 14px;
+            margin: 10px auto 0;  
+            margin-bottom: 15px;   
+            display: block;          
+            border: none;
+            border-radius: 25px;     
+            background: #ff6f91;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .login-box input[type="submit"]:hover {
+           background: #ff4e73;
+        }
+ 
+        .signup-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .signup-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .login-box {
+                padding: 20px;
+            }
+            .login-box h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+ <header class="login-header">
+        <div class="back-btn" onclick="goBack()">&#8592;</div>
+    </header>
+
+    <div class="container">
+        <div class="login-box">
+            <h2>Log in</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="submit" value="Log in">
+            </form>
+            <div class="signup-link">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'index.html';
+        });
+
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

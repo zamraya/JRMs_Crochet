@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keychains - JRM's Crochet</title>
+  <link rel="icon" type="image/png" href="images/JRMsLogo.png" sizes="512x512">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header (same as index.html) -->
+<header>
+<div class="nav">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100089601383321" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/jrms.crochet" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:jrmscrochet@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.tiktok.com/@jrms.crochet" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+    
+  <div class="left-section">
+    <div class="logo">
+        <img src="/images/logo.png" alt="Logo" class="logo-img">
+        <strong>JRM's Crochet</strong>
+    </div>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+      <nav>
+        <ul>
+          <li><a href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="products.html"><i class="fas fa-box-open"></i> All Products</a></li>
+          <li class="nav-dropdown">
+            <a href="#"><i class="fas fa-th-list"></i> Categories ▼</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="bouquets.html"><i class="fas fa-spa"></i> Bouquets</a></li>
+              <li><a href="keychains.html"><i class="fas fa-key"></i> Keychains</a></li>
+              <li><a href="amigurumis.html"><i class="fas fa-paw"></i> Amigurumis</a></li>
+              <li><a href="pouches.html"><i class="fas fa-shopping-bag"></i> Pouches</a></li>
+              <li><a href="pottedplants.html"><i class="fas fa-seedling"></i> Potted Plants</a></li>
+              <li><a href="moneybouquets.html"><i class="fas fa-gift"></i> Money Bouquets</a></li>
+              <li><a href="satin.html"><i class="fas fa-ribbon"></i> Satin</a></li>
+              <li><a href="others.html"><i class="fas fa-box-open"></i> Others</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="right-section">
+      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+  </div>
+</div>
+</header>
+
+<!-- Category Section -->
+<section id="category" class="category-page">
+  <h1>Money Bouquets</h1>
+  <h4>Discover our handmade money bouquets collection.</h4>
+  <!-- Polaroid Product Grid -->
+  <div class="product-grid all-grid">
+    <div class="product-card">
+      <img src="moneybouquets/10bills.jpg" alt="moneybouquets">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <p class="product-price">₱600</p>
+        <p class="product-name">10 Bills w/ Chocolate + 12 Satin Rose</p>  
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="moneybouquets/20bills.jpg" alt="moneybouquets">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <p class="product-price">₱500</p>
+        <p class="product-name">20 Bills + 4 Satin Rose</p>  
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="moneybouquets/56bills.jpg" alt="moneybouquets">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <p class="product-price">₱1,200</p>
+        <p class="product-name">56 Bills + 7 Satin Rose</p>  
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="copyright">© 2025 JRM's Crochet. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

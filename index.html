@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JRM's Crochet</title>
+    <link rel="icon" type="image/png" href="images/favicon.jpg" sizes="512x512">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header>
+<div class="nav">
+    <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=100089601383321" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="https://www.instagram.com/jrms.crochet?igsh=aXJ3ZnI1Z2tveTNs" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="mailto:jrmscrochet@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.tiktok.com/@jrms.crochet" target="_blank">
+           <i class="fab fa-tiktok"></i>
+        </a>
+    </div>
+    
+  <div class="left-section">
+    <div class="logo">
+        <img src="/images/logo.png" alt="My Website Logo" class="logo-img">
+        <strong>JRM's Crochet</strong>
+    </div>
+    
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    
+    <div class="nav-links">
+      <nav>
+        <ul>
+          <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+          <li class="dropdown">
+            <a href="#" id="categories-btn"><i class="fas fa-th-large"></i> Categories <span class="arrow">▼</span></a>
+            <ul class="dropdown-menu" id="dropdown-menu">
+              <li><a href="products.html"><i class="fas fa-box-open"></i> All Products</a></li>
+              <li><a href="#featured"><i class="fas fa-star"></i> Featured</a></li>
+              <li class="nav-dropdown">
+                <a href="#shop-category"><i class="fas fa-th-list"></i> Shop by Category <span class="arrow">▶</span></a>
+                <ul class="nav-dropdown-menu nav-submenu">
+                  <li><a href="bouquets.html"><i class="fas fa-spa"></i> Bouquets</a></li>
+                  <li><a href="keychains.html"><i class="fas fa-key"></i> Keychains</a></li>
+                  <li><a href="amigurumis.html"><i class="fas fa-paw"></i> Amigurumis</a></li>
+                  <li><a href="pouches.html"><i class="fas fa-shopping-bag"></i> Pouches</a></li>
+                  <li><a href="pottedplants.html"><i class="fas fa-seedling"></i> Potted Plants</a></li>
+                  <li><a href="moneybouquets.html"><i class="fas fa-gift"></i> Money Bouquets</a></li>
+                  <li><a href="satin.html"><i class="fas fa-ribbon"></i> Satin</a></li>
+                  <li><a href="others.html"><i class="fas fa-box-open"></i> Others</a></li>
+                </ul>
+                <li><a href="#guidelines"><i class="fas fa-info-circle"></i> Guidelines</a></li>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Right Section with gap -->
+  <div class="right-section">
+      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+      <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+  </div>
+</div>
+
+<script>
+  // Toggle hamburger menu
+  function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+  }
+
+  // Toggle Categories dropdown
+  document.addEventListener("DOMContentLoaded", function() {
+    let categoriesBtn = document.getElementById("categories-btn");
+    let dropdownMenu = document.getElementById("dropdown-menu");
+
+    categoriesBtn.addEventListener("click", function(event) {
+      event.preventDefault();
+      dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+      if (!categoriesBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.style.display = "none";
+      }
+    });
+  });
+</script>
+</header>
+
+
+<section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="content">
+    <h4>✨ Handcrafted with Love ✨</h4>
+    <h1><i><span>JRM’s Crochet</span></i></h1>
+    <p>Discover handmade crochet items that add charm and joy to everyday life.</p>
+    <a href="#shop-category" class="btn">Explore Here  →</a>
+    </div>
+</section>
+
+<section id="featured" class="featured">
+    <h1>Featured Collection</h1>
+    <h4>Carefully selected pieces that showcase the beauty and craftsmanship of handmade crochet work.</h4>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="featured/featured1.jpg" alt="Product">
+            <div class="product-info">
+                <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-comment"></i>
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+                <p>₱500</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="featured/featured2.jpg" alt="Product">
+            <div class="product-info">
+                <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-comment"></i>
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+                <p>₱535</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="featured/featured3.jpg" alt="Product">
+            <div class="product-info">
+                <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-comment"></i>
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+                <p>₱600</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="featured/featured4.jpg" alt="Product">
+            <div class="product-info">
+               <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-comment"></i>
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+                <p>₱560</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="featured/featured5.jpg" alt="Product">
+            <div class="product-info">
+                <div class="icons">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-comment"></i>
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+                <p>₱575</p>
+            </div>
+        </div>
+    </div>
+    <a href="products.html" class="btn">View All Products →</a>
+</section>
+
+
+<section id="shop-category" class="shop-category">
+  <h1>Shop by Category</h1>
+  <h4>Explore our diverse collection of handmade crochet products.</h4>
+  <div class="category-grid">
+    <div class="category-card">
+      <a href="bouquets.html">
+        <img src="category/bouquets.jpg" alt="Bouquets">
+        <h3>Bouquets</h3>
+      </a>
+    </div>
+    <div class="category-card">
+      <a href="keychains.html">
+        <img src="category/keychains.jpg" alt="Keychains">
+        <h3>Keychains</h3>
+      </a>
+    </div>
+    <div class="category-card">
+      <a href="amigurumis.html">
+        <img src="category/amigurumi.jpg" alt="Amigurumis">
+        <h3>Amigurumis</h3>
+      </a>
+    </div>
+    <div class="category-card">
+      <a href="pouches.html">
+        <img src="category/pouches.jpg" alt="Pouches">
+        <h3>Pouches</h3>
+      </a>
+    </div>
+    <div class="category-card">
+      <a href="pottedplants.html">
+        <img src="category/pottedplant.jpg" alt="Potted Plants">
+        <h3>Potted Plants</h3>
+      </a>
+    </div>
+    <div class="category-card">
+      <a href="moneybouquets.html">
+        <img src="category/moneybouquet.jpg" alt="Money Bouquets">
+        <h3>Money Bouquets</h3>
+      </a>
+    </div>
+    <div class="category-card">
+      <a href="satin.html">
+        <img src="category/satin.jpg" alt="Satin">
+        <h3>Satin</h3>
+      </a>
+    </div>
+    <div class="category-card">
+      <a href="others.html">
+        <img src="category/others.jpg" alt="Others">
+        <h3>Others</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+  <section id="guidelines" class="shop-guidelines">
+  <h1>Shop Guidelines & Policies</h1>
+  <h4>We value transparency and kindness — here’s what to know before ordering from JRM’s Crochet.</h4>
+
+  <div class="guideline-grid">
+    <div class="guideline-card">
+      <img src="guidelines/policy1.jpg" alt="Shop Guideline 1">
+      <h3>Made-to-Order</h3>
+      <p>All crochet pieces are handmade with care. Please allow enough time for crafting your order before shipment.</p>
+    </div>
+
+    <div class="guideline-card">
+      <img src="guidelines/policy2.jpg" alt="Shop Guideline 2">
+      <h3>Payment Policy</h3>
+      <p>Full payment or down payment is required upon confirmation of order to secure your slot.</p>
+    </div>
+
+    <div class="guideline-card">
+      <img src="guidelines/policy3.jpg" alt="Shop Guideline 3">
+      <h3>No Rush Orders</h3>
+      <p>Quality takes time. Kindly avoid rush requests to ensure each piece is crafted beautifully and neatly.</p>
+    </div>
+
+    <div class="guideline-card">
+      <img src="guidelines/policy4.jpg" alt="Shop Guideline 4">
+      <h3>Return & Refund</h3>
+      <p>Due to the handmade nature of products, returns and refunds are only accepted for damaged or incorrect items.</p>
+    </div>
+  </div>
+</section>
+
+
+</section>
+    <footer>
+            <p class="copyright">© 2025 JRM's Crochet. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

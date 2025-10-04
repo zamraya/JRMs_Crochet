@@ -1,0 +1,146 @@
+/* Section styling */
+.all-products {
+  padding: 100px 20px 80px;
+  text-align: center;
+}
+
+.all-products h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  color: #000;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Search bar + Menu shortcuts */
+.search-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-container i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 1rem;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 15px 10px 35px; /* extra left padding for the icon */
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.search-bar:focus {
+  border-color: #ff7ca3;
+  box-shadow: 0 0 5px rgba(255, 124, 163, 0.4);
+}
+
+.menu-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.menu-shortcuts a {
+  padding: 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #444;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.menu-shortcuts a:hover {
+  background: #ff7ca3;
+  color: #fff;
+  border-color: #ff7ca3;
+}
+
+
+/* Product Grid (Polaroid style, 10 rows × 5 columns) */
+.all-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px; 
+}
+
+.all-grid .product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.all-grid .product-card:hover {
+  transform: scale(1.05);
+}
+
+.all-grid .product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.all-grid .product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.all-grid .icons {
+  display: flex;
+  gap: 8px;
+}
+
+.all-grid .icons i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.all-grid .icons i:hover {
+  color: #ff7ca3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .all-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .all-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .all-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .all-grid {
+    grid-template-columns: 1fr;
+  }
+}
