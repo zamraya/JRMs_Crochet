@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keychains - JRM's Crochet</title>
+  <title>Potted Plants - JRM's Crochet</title>
   <link rel="icon" type="image/png" href="images/favicon.jpg" sizes="512x512">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="style.css">
@@ -16,7 +16,6 @@
 </head>
 <body>
 
-<!-- Header (same as index.html) -->
 <header>
 <div class="nav">
     <div class="social-icons">
@@ -60,42 +59,47 @@
   </div>
 
   <div class="right-section">
-      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
       <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
   </div>
 </div>
 </header>
 
-<!-- Category Section -->
 <section id="category" class="category-page">
   <h1>Potted Plants</h1>
   <h4>Discover our handmade crochet potted plants collection.</h4>
-  <!-- Polaroid Product Grid -->
+
   <div class="product-grid all-grid">
- <div class="product-card">
-  <img src="pottedplants/daisy.jpg" alt="pottedplants">
-  <div class="product-info">
-    <div class="icons">
-      <i class="fas fa-heart"></i>
-      <i class="fas fa-comment"></i>
-      <i class="fas fa-shopping-cart"></i>
-    </div>
-    <p class="product-price">₱250</p>
-    <p class="product-name">Daisy Potted Plant</p> 
-  </div>
-</div>
-    <div class="product-card">
-      <img src="pottedplants/sunflower.jpg" alt="pottedplants">
+
+    <div class="product-card" data-id="potted1" data-name="Daisy Potted Plant" data-price="250" data-img="pottedplants/daisy.jpg" data-category="Potted Plants">
+      <img src="pottedplants/daisy.jpg" alt="Daisy Potted Plant">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱250</p>
-        <p class="product-name">Sunflower Potted Plant</p> 
+        <p class="product-name">Daisy Potted Plant</p>
       </div>
     </div>
+
+    <div class="product-card" data-id="potted2" data-name="Sunflower Potted Plant" data-price="250" data-img="pottedplants/sunflower.jpg" data-category="Potted Plants">
+      <img src="pottedplants/sunflower.jpg" alt="Sunflower Potted Plant">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱250</p>
+        <p class="product-name">Sunflower Potted Plant</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -107,7 +111,53 @@
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
-</script>
 
+document.addEventListener("DOMContentLoaded", () => {
+  const likeButtons = document.querySelectorAll(".like-btn");
+  const cartButtons = document.querySelectorAll(".cart-btn");
+  const categoryName = "Potted Plants";
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").textContent = cart.length;
+  }
+  updateCartCount();
+
+  likeButtons.forEach(btn => {
+    const card = btn.closest(".product-card");
+    const productId = card.dataset.id;
+    if (localStorage.getItem(`like_${productId}`) === "true") {
+      btn.classList.add("active");
+    }
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      localStorage.setItem(`like_${productId}`, btn.classList.contains("active"));
+    });
+  });
+
+  cartButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".product-card");
+      const product = {
+        id: card.dataset.id,
+        name: card.dataset.name,
+        price: parseFloat(card.dataset.price),
+        img: card.dataset.img,
+        quantity: 1,
+        category: card.dataset.category || categoryName
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) existing.quantity++;
+      else cart.push(product);
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      alert(`${product.name} added to cart!`);
+    });
+  });
+});
+</script>
 </body>
 </html>

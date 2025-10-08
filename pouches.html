@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keychains - JRM's Crochet</title>
+  <title>Pouches - JRM's Crochet</title>
   <link rel="icon" type="image/png" href="images/favicon.jpg" sizes="512x512">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<!-- Header (same as index.html) -->
+<!-- Header -->
 <header>
 <div class="nav">
     <div class="social-icons">
@@ -60,7 +60,10 @@
   </div>
 
   <div class="right-section">
-      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
       <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
   </div>
 </div>
@@ -70,80 +73,87 @@
 <section id="category" class="category-page">
   <h1>Pouches</h1>
   <h4>Discover our handmade crochet pouches collection.</h4>
-  <!-- Polaroid Product Grid -->
+  
   <div class="product-grid all-grid">
-    <div class="product-card">
-      <img src="pouches/coinpouch.jpg" alt="pouches">
+
+    <div class="product-card" data-id="pouch1" data-name="Coin Pouch" data-price="75" data-img="pouches/coinpouch.jpg" data-category="Pouches">
+      <img src="pouches/coinpouch.jpg" alt="Coin Pouch">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱75</p>
         <p class="product-name">Coin Pouch</p> 
       </div>
     </div>
-   <div class="product-card">
-      <img src="pouches/calculatorpouch.jpg" alt="pouches">
+
+    <div class="product-card" data-id="pouch2" data-name="Calculator Pouch" data-price="120" data-img="pouches/calculatorpouch.jpg" data-category="Pouches">
+      <img src="pouches/calculatorpouch.jpg" alt="Calculator Pouch">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱120</p>
-        <p class="product-name">calculator Pouch</p> 
+        <p class="product-name">Calculator Pouch</p> 
       </div>
     </div>
-    <div class="product-card">
-      <img src="pouches/phone.jpg" alt="pouches">
+
+    <div class="product-card" data-id="pouch3" data-name="Simple Phone Pouch" data-price="250" data-img="pouches/phone.jpg" data-category="Pouches">
+      <img src="pouches/phone.jpg" alt="Simple Phone Pouch">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱250</p>
         <p class="product-name">Simple Phone Pouch</p> 
       </div>
     </div>
-    <div class="product-card">
-      <img src="pouches/phone1.jpg" alt="pouches">
+
+    <div class="product-card" data-id="pouch4" data-name="Phone Pouch w/ Design" data-price="300" data-img="pouches/phone1.jpg" data-category="Pouches">
+      <img src="pouches/phone1.jpg" alt="Phone Pouch w/ Design">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱300</p>
         <p class="product-name">Phone Pouch w/ Design</p> 
       </div>
     </div>
-    <div class="product-card">
-      <img src="pouches/powerbank.jpg" alt="pouches">
+
+    <div class="product-card" data-id="pouch5" data-name="Powerbank Pouch" data-price="150" data-img="pouches/powerbank.jpg" data-category="Pouches">
+      <img src="pouches/powerbank.jpg" alt="Powerbank Pouch">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱150</p>
         <p class="product-name">Powerbank Pouch</p> 
       </div>
     </div>
-    <div class="product-card">
-      <img src="pouches/pencilcase.jpg" alt="pouches">
+
+    <div class="product-card" data-id="pouch6" data-name="Pencil Case" data-price="250" data-img="pouches/pencilcase.jpg" data-category="Pouches">
+      <img src="pouches/pencilcase.jpg" alt="Pencil Case">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱250</p>
         <p class="product-name">Pencil Case</p> 
       </div>
     </div>
+
   </div>
 </section>
 
@@ -155,7 +165,53 @@
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
-</script>
 
+document.addEventListener("DOMContentLoaded", () => {
+  const likeButtons = document.querySelectorAll(".like-btn");
+  const cartButtons = document.querySelectorAll(".cart-btn");
+  const categoryName = "Pouches";
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").textContent = cart.length;
+  }
+  updateCartCount();
+
+  likeButtons.forEach(btn => {
+    const card = btn.closest(".product-card");
+    const productId = card.dataset.id;
+    if (localStorage.getItem(`like_${productId}`) === "true") {
+      btn.classList.add("active");
+    }
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      localStorage.setItem(`like_${productId}`, btn.classList.contains("active"));
+    });
+  });
+
+  cartButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".product-card");
+      const product = {
+        id: card.dataset.id,
+        name: card.dataset.name,
+        price: parseFloat(card.dataset.price),
+        img: card.dataset.img,
+        quantity: 1,
+        category: card.dataset.category || categoryName
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) existing.quantity++;
+      else cart.push(product);
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      alert(`${product.name} added to cart!`);
+    });
+  });
+});
+</script>
 </body>
 </html>

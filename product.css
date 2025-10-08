@@ -113,6 +113,7 @@
 .all-grid .icons {
   display: flex;
   gap: 8px;
+  color: #e85470;
 }
 
 .all-grid .icons i {
@@ -127,8 +128,8 @@
 .product-info {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers all inner elements */
-  gap: 5px; /* spacing between icons, price, and name */
+  align-items: center; 
+  gap: 5px; 
 }
 
 .product-name {

@@ -122,6 +122,7 @@
   }
 }
 
+/* ✅ Tablets & Mobile (2x2 layout) */
 @media (max-width: 768px) {
   .featured {
     padding: 100px 10px 60px;
@@ -129,7 +130,7 @@
 
   .product-grid {
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
   }
 
   .product-card {
@@ -145,13 +146,18 @@
   }
 }
 
+/* ✅ Small phones still 2 per row */
 @media (max-width: 480px) {
+  .product-grid {
+    gap: 10px;
+  }
+
   .product-card {
-    width: 100%; /* one card per row */
+    width: 48%; /* still 2 cards per row */
   }
 
   .featured h1 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 
   .featured h4 {

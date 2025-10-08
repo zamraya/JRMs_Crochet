@@ -412,25 +412,6 @@ form button:hover {
         gap: 6px; 
     }
 
-    .search-bar {
-        display: flex;
-        align-items: center;
-        border: 1px solid black;
-        border-radius: 20px;
-        padding: 4px 8px;
-        width: 130px;
-        font-size: 14px;
-        background: white;
-    }
-
-    .search-bar input {
-        border: none;
-        outline: none;
-        width: 100%;
-        font-size: 14px;
-        background: transparent;
-    }
-
     .login-btn {
         background: white;
         color: black;
@@ -472,7 +453,7 @@ form button:hover {
     }
 
     .nav-links a:hover {
-        color: #e91e63; /* pink hover */
+        color: #e91e63; 
         font-weight: bold;
     }
 }

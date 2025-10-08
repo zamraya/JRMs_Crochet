@@ -101,6 +101,21 @@ body {
   color: #000;
 }
 
+.like-btn.active {
+  color: #ff5c8a;
+}
+
+#cart-count {
+  background: #ff5c8a;
+  color: white;
+  font-size: 0.8em;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: relative;
+  top: -10px;
+  right: 10px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .category-grid {

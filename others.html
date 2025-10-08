@@ -60,7 +60,10 @@
   </div>
 
   <div class="right-section">
-      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
       <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
   </div>
 </div>
@@ -72,28 +75,30 @@
   <h4>Discover our handmade customized collection.</h4>
   <!-- Polaroid Product Grid -->
   <div class="product-grid all-grid">
-    <div class="product-card">
-      <img src="others/dolldress.jpg" alt="others">
+
+   <div class="product-card" data-id="others1" data-name="Doll Dress" data-price="3 for 150" data-img="others/dolldress.jpg" data-category="Others">
+      <img src="others/dolldress.jpg" alt="Doll Dress">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">3 for ₱150</p>
         <p class="product-name">Doll dress</p> 
       </div>
     </div>
-    <div class="product-card">
-      <img src="others/makeupbouquet.jpg" alt="others">
+
+    <div class="product-card" data-id="others2" data-name="Make Up Bouquet" data-price="650" data-img="others/makeupbouquet.jpg" data-category="Others">
+      <img src="others/makeupbouquet.jpg" alt="Make Up Bouquet">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱650</p>
-        <p class="product-name">Make Up Bouquet ps. Make up is from customer</p> 
+        <p class="product-name">Make Up Bouquet</p> 
       </div>
     </div>
   </div>
@@ -107,6 +112,53 @@
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const likeButtons = document.querySelectorAll(".like-btn");
+  const cartButtons = document.querySelectorAll(".cart-btn");
+  const categoryName = "Others";
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").textContent = cart.length;
+  }
+  updateCartCount();
+
+  likeButtons.forEach(btn => {
+    const card = btn.closest(".product-card");
+    const productId = card.dataset.id;
+    if (localStorage.getItem(`like_${productId}`) === "true") {
+      btn.classList.add("active");
+    }
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      localStorage.setItem(`like_${productId}`, btn.classList.contains("active"));
+    });
+  });
+
+  cartButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".product-card");
+      const product = {
+        id: card.dataset.id,
+        name: card.dataset.name,
+        price: parseFloat(card.dataset.price),
+        img: card.dataset.img,
+        quantity: 1,
+        category: card.dataset.category || categoryName
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) existing.quantity++;
+      else cart.push(product);
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      alert(`${product.name} added to cart!`);
+    });
+  });
+});
 </script>
 
 </body>

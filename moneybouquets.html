@@ -60,7 +60,10 @@
   </div>
 
   <div class="right-section">
-      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+      <a href="cart.html" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+      </a>
       <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
   </div>
 </div>
@@ -72,37 +75,39 @@
   <h4>Discover our handmade money bouquets collection.</h4>
   <!-- Polaroid Product Grid -->
   <div class="product-grid all-grid">
-    <div class="product-card">
+    <div class="product-card" data-id="money1" data-name="10 Bills w/ Chocolate + 12 Satin Rose" data-price="600" data-img="moneybouquets/10bills.jpg">
       <img src="moneybouquets/10bills.jpg" alt="moneybouquets">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱600</p>
         <p class="product-name">10 Bills w/ Chocolate + 12 Satin Rose</p>  
       </div>
     </div>
-    <div class="product-card">
+
+    <div class="product-card" data-id="money2" data-name="20 Bills + 4 Satin Rose" data-price="500" data-img="moneybouquets/20bills.jpg">
       <img src="moneybouquets/20bills.jpg" alt="moneybouquets">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱500</p>
         <p class="product-name">20 Bills + 4 Satin Rose</p>  
       </div>
     </div>
-    <div class="product-card">
+
+    <div class="product-card" data-id="money3" data-name="56 Bills + 7 Satin Rose" data-price="1,200" data-img="moneybouquets/56bills.jpg">
       <img src="moneybouquets/56bills.jpg" alt="moneybouquets">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart"></i>
+           <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱1,200</p>
         <p class="product-name">56 Bills + 7 Satin Rose</p>  
@@ -119,6 +124,53 @@
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("active");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const likeButtons = document.querySelectorAll(".like-btn");
+  const cartButtons = document.querySelectorAll(".cart-btn");
+  const categoryName = "Money Bouquet";
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").textContent = cart.length;
+  }
+  updateCartCount();
+
+  likeButtons.forEach(btn => {
+    const card = btn.closest(".product-card");
+    const productId = card.dataset.id;
+    if (localStorage.getItem(`like_${productId}`) === "true") {
+      btn.classList.add("active");
+    }
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      localStorage.setItem(`like_${productId}`, btn.classList.contains("active"));
+    });
+  });
+
+  cartButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".product-card");
+      const product = {
+        id: card.dataset.id,
+        name: card.dataset.name,
+        price: parseFloat(card.dataset.price),
+        img: card.dataset.img,
+        quantity: 1,
+        category: card.dataset.category || categoryName
+      };
+
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.id === product.id);
+      if (existing) existing.quantity++;
+      else cart.push(product);
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+      alert(`${product.name} added to cart!`);
+    });
+  });
+});
 </script>
 
 </body>
