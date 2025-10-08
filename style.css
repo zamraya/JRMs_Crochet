@@ -4,6 +4,7 @@ body {
   font-family: 'Playfair Display', serif;
   background: #fff;
   color: #555;
+  overflow-x: hidden;
 }
 
 /* Page container */
@@ -26,10 +27,10 @@ body {
 /* Grid for categories */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  grid-auto-rows: auto; 
-  gap: 25px; 
-  justify-content: center; 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -40,7 +41,8 @@ body {
   border: 1px solid #eee;
   border-radius: 15px;
   padding: 20px;
-  width: 220px;
+  width: 100%;
+  max-width: 230px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
@@ -58,6 +60,7 @@ body {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 15px;
+  display: block;
 }
 
 /* Category text */
@@ -70,8 +73,8 @@ body {
 .product-info {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers all inner elements */
-  gap: 5px; /* spacing between icons, price, and name */
+  align-items: center;
+  gap: 6px;
 }
 
 .product-name {
@@ -90,30 +93,44 @@ body {
 .icons {
   display: flex;
   gap: 8px;
-  justify-content: center; 
+  justify-content: center;
+  color: #e85470;
+}
+
+.icons i:hover {
+  color: #000;
 }
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .category-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on smaller screens */
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 992px) {
   .category-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columns tablet */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 768px) {
   .category-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns mobile */
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .category-page h1 {
+    font-size: 2.4rem;
   }
 }
 
 @media (max-width: 500px) {
   .category-grid {
-    grid-template-columns: 1fr; /* 1 column small screens */
+    grid-template-columns: 1fr;
+  }
+  .category-card {
+    max-width: 350px;
+  }
+  .category-page h1 {
+    font-size: 2rem;
   }
 }
