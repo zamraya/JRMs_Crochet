@@ -36,8 +36,26 @@ table {
   border-collapse: collapse;
 }
 
-th {
+table th:nth-child(1),
+table td:nth-child(1),
+table th:nth-child(2),
+table td:nth-child(2) {
+  text-align: center;
+}
+
+table th:nth-child(3),
+table td:nth-child(3),
+table th:nth-child(4),
+table td:nth-child(4) {
   text-align: left;
+}
+
+table td {
+  vertical-align: middle;
+}
+
+th {
+  text-align: center;
   color: #666;
   font-weight: 500;
   border-bottom: 1px solid #eee;
@@ -81,10 +99,16 @@ td img {
   text-decoration: underline;
 }
 
+.quantity-wrapper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;   
+  gap: 5px;               
+}
+
 .quantity-control {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
 }
 
@@ -141,7 +165,7 @@ td.total {
       color: #ff5c8a;
       cursor: pointer;
     }
-    
+
 /* CONTINUE SHOPPING BUTTON */
 .continue {
   display: inline-block;

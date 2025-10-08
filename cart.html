@@ -156,12 +156,14 @@
             </div>
           </td>
           <td>
-            <div class="quantity-control">
-              <button class="decrease" data-id="${item.id}">-</button>
-              <span>${item.quantity}</span>
-              <button class="increase" data-id="${item.id}">+</button>
+                <div class="quantity-wrapper">
+                <div class="quantity-control">
+                <button class="decrease" data-id="${item.id}">-</button>
+                <span>${item.quantity}</span>
+                <button class="increase" data-id="${item.id}">+</button>
             </div>
-          </td>
+            </div>
+            </td>
           <td>₱${item.price}</td>
           <td>₱${itemTotal}</td>
         `;
