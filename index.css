@@ -397,6 +397,12 @@ form button:hover {
     align-items: center;
 }
 
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -481,8 +487,6 @@ form button:hover {
         font-weight: bold;
     }
 }
-
-
 
 /* Extended nav dropdown menu */
 .nav-dropdown-menu {
