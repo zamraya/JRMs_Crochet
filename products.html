@@ -6,6 +6,7 @@
   <title>All Products - JRM's Crochet</title>
   <link rel="icon" type="image/png" href="images/favicon.jpg" sizes="512x512">
   <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="cart.css">
   <link rel="stylesheet" href="product.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,16 +39,16 @@
           <li><a href="index.html#home"><i class="fas fa-home"></i> Home</a></li>
           <li><a href="products.html"><i class="fas fa-box-open"></i> All Products</a></li>
           <li class="nav-dropdown">
-            <a href="#"><i class="fas fa-th-large"></i> Categories ▼</a>
+            <a href="#"><i class="fas fa-th-list"></i> Categories</a>
             <ul class="nav-dropdown-menu">
-              <li><a href="bouquets.html"><i class="fas fa-spa"></i> Bouquets</a></li>
-              <li><a href="keychains.html"><i class="fas fa-key"></i> Keychains</a></li>
-              <li><a href="amigurumis.html"><i class="fas fa-paw"></i> Amigurumis</a></li>
-              <li><a href="pouches.html"><i class="fas fa-shopping-bag"></i> Pouches</a></li>
-              <li><a href="pottedplants.html"><i class="fas fa-seedling"></i> Potted Plants</a></li>
-              <li><a href="moneybouquets.html"><i class="fas fa-gift"></i> Money Bouquets</a></li>
-              <li><a href="satin.html"><i class="fas fa-ribbon"></i> Satin</a></li>
-              <li><a href="others.html"><i class="fas fa-box-open"></i> Others</a></li>
+                  <li><a href="amigurumis.html"><i class="fas fa-paw"></i> Amigurumis</a></li>
+                  <li><a href="bouquets.html"><i class="fas fa-spa"></i> Bouquets</a></li>
+                  <li><a href="keychains.html"><i class="fas fa-key"></i> Keychains</a></li>
+                  <li><a href="moneybouquets.html"><i class="fas fa-gift"></i> Money Bouquets</a></li>
+                  <li><a href="pottedplants.html"><i class="fas fa-seedling"></i> Potted Plants</a></li>
+                  <li><a href="pouches.html"><i class="fas fa-shopping-bag"></i> Pouches</a></li>
+                  <li><a href="satin.html"><i class="fas fa-ribbon"></i> Satin</a></li>
+                  <li><a href="others.html"><i class="fas fa-box-open"></i> Others</a></li>
             </ul>
           </li>
         </ul>
@@ -55,13 +56,16 @@
     </div>
   </div>
 
-      <div class="right-section">
+       <div class="right-section">
       <a href="cart.html" class="cart-icon">
         <i class="fas fa-shopping-cart"></i>
         <span id="cart-count">0</span>
       </a>
-      <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
-  </div>
+      <a href="wishlists.html" class="wishlist-link">
+        <i class="fas fa-heart"></i>
+       <span id="wishlist-count">0</span>
+      </a>
+    </div>
 </div>
 </header>
 
@@ -79,79 +83,7 @@
   <!-- Polaroid Product Grid (10 rows x 5 columns = 50 items) -->
   <div class="product-grid all-grid">
     <!-- Repeat this block 50 times or generate dynamically -->
-     <div class="product-card" data-id="amigurumi1" data-name="Anger" data-price="180" data-img="amigurumis/anger.jpg">
-      <img src="amigurumis/anger.jpg" alt="amigurumi">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱180</p>
-        <p class="product-name">Anger</p> 
-      </div>
-    </div>
-   <div class="product-card" data-id="amigurumi2" data-name="Anxiety" data-price="180" data-img="amigurumis/anxiety.jpg">
-      <img src="amigurumis/anxiety.jpg" alt="amigurumi">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱180</p>
-        <p class="product-name">Anxiety</p> 
-      </div>
-    </div>
-    <div class="product-card" data-id="amigurumi3" data-name="Envy" data-price="200" data-img="amigurumis/envy.jpg">
-      <img src="amigurumis/envy.jpg" alt="amigurumi">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱200</p>
-        <p class="product-name">Envy</p> 
-      </div>
-    </div>
-   <div class="product-card" data-id="amigurumi4" data-name="Koya" data-price="250" data-img="amigurumis/koya.jpg">
-      <img src="amigurumis/koya.jpg" alt="amigurumis">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱250</p>
-        <p class="product-name">Koya</p> 
-      </div>
-    </div>
-    <div class="product-card" data-id="amigurumi5" data-name="Luffy" data-price="150" data-img="amigurumis/luffy.jpg">
-      <img src="amigurumis/luffy.jpg" alt="amigurumis">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱150</p>
-        <p class="product-name">Luffy</p> 
-      </div>
-    </div>
-    <div class="product-card" data-id="amigurumi6" data-name="Monkey" data-price="150" data-img="amigurumis/monkey.jpg">
-      <img src="amigurumis/monkey.jpg" alt="amigurumis">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱150</p>
-        <p class="product-name">Monkey</p> 
-      </div>
-    </div>
-    <div class="product-card" data-id="amigurumi7" data-name="Stitch" data-price="200" data-img="amigurumis/stitch.jpg">
+     <div class="product-card" data-id="amigurumi1" data-name="Stitch" data-price="200" data-img="amigurumis/stitch.jpg">
       <img src="amigurumis/stitch.jpg" alt="amigurumis">
       <div class="product-info">
         <div class="icons">
@@ -163,7 +95,103 @@
         <p class="product-name">Stitch</p> 
       </div>
     </div>
-    <div class="product-card" data-id="amigurumi8" data-name="Smiski" data-price="65" data-img="amigurumis/smiski.jpg">
+    <div class="product-card" data-id="amigurumi2" data-name="Anger" data-price="180" data-img="amigurumis/anger.jpg">
+      <img src="amigurumis/anger.jpg" alt="amigurumi">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱180</p>
+        <p class="product-name">Anger</p> 
+      </div>
+    </div>
+   <div class="product-card" data-id="amigurumi3" data-name="Anxiety" data-price="180" data-img="amigurumis/anxiety.jpg">
+      <img src="amigurumis/anxiety.jpg" alt="amigurumi">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱180</p>
+        <p class="product-name">Anxiety</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="amigurumi4" data-name="Envy" data-price="200" data-img="amigurumis/envy.jpg">
+      <img src="amigurumis/envy.jpg" alt="amigurumi">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱200</p>
+        <p class="product-name">Envy</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="amigurumi5" data-name="Luffy" data-price="150" data-img="amigurumis/luffy.jpg">
+      <img src="amigurumis/luffy.jpg" alt="amigurumis">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱280</p>
+        <p class="product-name">Luffy</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="amigurumi6" data-name="Zoro" data-price="150" data-img="amigurumis/zoro.jpg">
+      <img src="amigurumis/zoro.jpg" alt="amigurumis">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱150</p>
+        <p class="product-name">Zoro</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="amigurumi7" data-name="Tonny Chopper" data-price="150" data-img="amigurumis/tonnychopper.jpg">
+      <img src="amigurumis/tonnychopper.jpg" alt="amigurumis">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱350</p>
+        <p class="product-name">Tonny Chopper</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="amigurumi8" data-name="Monkey" data-price="150" data-img="amigurumis/monkey.jpg">
+      <img src="amigurumis/monkey.jpg" alt="amigurumis">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱150</p>
+        <p class="product-name">Monkey</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="amigurumi9" data-name="Koya" data-price="250" data-img="amigurumis/koya.jpg">
+      <img src="amigurumis/koya.jpg" alt="amigurumis">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱250</p>
+        <p class="product-name">Koya</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="amigurumi10" data-name="Smiski" data-price="65" data-img="amigurumis/smiski.jpg">
       <img src="amigurumis/smiski.jpg" alt="amigurumis">
       <div class="product-info">
         <div class="icons">
@@ -175,7 +203,7 @@
         <p class="product-name">Smiski</p> 
       </div>
     </div>
-    <div class="product-card" data-id="bouquet1" data-name="Rose" data-price="120" data-img="bouquets/rose.jpg">
+<div class="product-card" data-id="bouquet1" data-name="Rose" data-price="120" data-img="bouquets/rose.jpg">
       <img src="bouquets/rose.jpg" alt="Bouquets">
       <div class="product-info">
         <div class="icons">
@@ -366,8 +394,8 @@
         <p class="product-price">₱75</p>
         <p class="product-name">Mini Bouquets</p> 
       </div>
-    </div>
-    <div class="product-card" data-id="keychain1" data-name="Bunny" data-price="45" data-img="keychains/bunny.jpg">
+  </div>
+   <div class="product-card" data-id="keychain1" data-name="Bunny" data-price="45" data-img="keychains/bunny.jpg">
       <img src="keychains/bunny.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
@@ -414,19 +442,19 @@
         <p class="product-price">₱50</p>
         <p class="product-name">Cat</p> 
       </div>
-    </div>  
-    <div class="product-card" data-id="keychain5" data-name="Dog" data-price="75" data-img="keychains/dog.jpg">
-      <img src="keychains/dog.jpg" alt="Keychain">
+    </div>
+    <div class="product-card" data-id="keychain5" data-name="Mini Fruits" data-price="25" data-img="keychains/fruits.jpg">
+      <img src="keychains/fruits.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
-         <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
           <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
-        <p class="product-price">₱75</p>
-        <p class="product-name">Dog</p> 
+        <p class="product-price">₱25</p>
+        <p class="product-name">Mini Fruits</p> 
       </div>
-    </div>  
+    </div>   
     <div class="product-card" data-id="keychain6" data-name="Duck w/ Knife" data-price="50" data-img="keychains/duck.jpg">
       <img src="keychains/duck.jpg" alt="Keychain">
       <div class="product-info">
@@ -450,31 +478,31 @@
         <p class="product-price">₱35</p>
         <p class="product-name">Evil eye</p> 
       </div>
-    </div>   
-   <div class="product-card" data-id="keychain8" data-name="Frog" data-price="85" data-img="keychains/frog.jpg">
-      <img src="keychains/frog.jpg" alt="Keychain">
-      <div class="product-info">
-        <div class="icons">
-         <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱85</p>
-        <p class="product-name">Frog</p> 
-      </div>
-    </div>   
-    <div class="product-card" data-id="keychain9" data-name="Mini Fruits" data-price="25" data-img="keychains/fruits.jpg">
-      <img src="keychains/fruits.jpg" alt="Keychain">
+    </div>  
+     <div class="product-card" data-id="keychain8" data-name="Panda" data-price="50" data-img="keychains/panda.jpg">
+      <img src="keychains/panda.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
           <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
           <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
-        <p class="product-price">₱25</p>
-        <p class="product-name">Mini Fruits</p> 
+        <p class="product-price">₱50</p>
+        <p class="product-name">Panda</p> 
       </div>
     </div>   
+       <div class="product-card" data-id="keychain9" data-name="Koya Head" data-price="65" data-img="keychains/koyahead.jpg">
+      <img src="keychains/koyahead.jpg" alt="Keychain">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱65</p>
+        <p class="product-name">Koya Head</p> 
+      </div>
+    </div>  
     <div class="product-card" data-id="keychain10" data-name="Ghost" data-price="25" data-img="keychains/ghost.jpg">
       <img src="keychains/ghost.jpg" alt="Keychain">
       <div class="product-info">
@@ -487,16 +515,16 @@
         <p class="product-name">Ghost</p> 
       </div>
     </div>   
-    <div class="product-card" data-id="keychain11" data-name="Ice Cream" data-price="65" data-img="keychains/icecream.jpg">
-      <img src="keychains/icecream.jpg" alt="Keychain">
+     <div class="product-card" data-id="keychain11" data-name="We Bare Bears" data-price="150 set" data-img="keychains/webarebears.jpg">
+      <img src="keychains/webarebears.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
+         <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
           <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
-        <p class="product-price">₱65</p>
-        <p class="product-name">Ice Cream</p> 
+        <p class="product-price">₱150 set</p>
+        <p class="product-name">We Bare Bears</p> 
       </div>
     </div>  
       <div class="product-card" data-id="keychain12" data-name="Junimo" data-price="35" data-img="keychains/junimo.jpg">
@@ -511,32 +539,20 @@
         <p class="product-name">Junimo</p> 
       </div>
     </div> 
-   <div class="product-card" data-id="keychain13" data-name="Koya Head" data-price="65" data-img="keychains/koyahead.jpg">
-      <img src="keychains/koyahead.jpg" alt="Keychain">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱65</p>
-        <p class="product-name">Koya Head</p> 
-      </div>
-    </div>   
-    <div class="product-card" data-id="keychain14" data-name="Mini Bouquet" data-price="120" data-img="keychains/minibouquet.jpg">
-      <img src="keychains/minibouquet.jpg" alt="Keychain">
+   <div class="product-card" data-id="keychain13" data-name="Dog" data-price="75" data-img="keychains/dog.jpg">
+      <img src="keychains/dog.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
           <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
-        <p class="product-price">₱120</p>
-        <p class="product-name">Mini Bouquet</p> 
+        <p class="product-price">₱75</p>
+        <p class="product-name">Dog</p> 
       </div>
-    </div>   
-    <div class="product-card" data-id="keychain15" data-name="Panda" data-price="50" data-img="keychains/panda.jpg">
-      <img src="keychains/panda.jpg" alt="Keychain">
+    </div>  
+      <div class="product-card" data-id="keychain14" data-name="Watermelon" data-price="50" data-img="keychains/watermelon.jpg">
+      <img src="keychains/watermelon.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
           <i class="fas fa-heart like-btn"></i>
@@ -544,9 +560,21 @@
           <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
         <p class="product-price">₱50</p>
-        <p class="product-name">Panda</p> 
+        <p class="product-name">Watermelon</p> 
       </div>
-    </div>   
+    </div>  
+  <div class="product-card" data-id="keychain15" data-name="Frog" data-price="85" data-img="keychains/frog.jpg">
+      <img src="keychains/frog.jpg" alt="Keychain">
+      <div class="product-info">
+        <div class="icons">
+         <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱85</p>
+        <p class="product-name">Frog</p> 
+      </div>
+    </div>     
      <div class="product-card" data-id="keychain16" data-name="Pig" data-price="50" data-img="keychains/pig.jpg">
       <img src="keychains/pig.jpg" alt="Keychain">
       <div class="product-info">
@@ -571,18 +599,18 @@
         <p class="product-name">Sheep</p> 
       </div>
     </div>   
-     <div class="product-card" data-id="keychain18" data-name="Star & Moon" data-price="50 per 2 pairs" data-img="keychains/star.jpg">
-      <img src="keychains/star.jpg" alt="Keychain">
+      <div class="product-card" data-id="keychain18" data-name="Avocado" data-price="45" data-img="keychains/avocado.jpg">
+      <img src="keychains/avocado.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
+         <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
           <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
-        <p class="product-price">₱50 per 2 pairs</p>
-        <p class="product-name">Star & Moon</p> 
+        <p class="product-price">₱45</p>
+        <p class="product-name">Avocado</p> 
       </div>
-    </div>   
+    </div> 
    <div class="product-card" data-id="keychain19" data-name="Totoro" data-price="50" data-img="keychains/totoro.jpg">
       <img src="keychains/totoro.jpg" alt="Keychain">
       <div class="product-info">
@@ -607,30 +635,30 @@
         <p class="product-name">Volleyball Ball</p> 
       </div>
     </div>   
-    <div class="product-card" data-id="keychain21" data-name="Watermelon" data-price="50" data-img="keychains/watermelon.jpg">
-      <img src="keychains/watermelon.jpg" alt="Keychain">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱50</p>
-        <p class="product-name">Watermelon</p> 
-      </div>
-    </div>   
-    <div class="product-card" data-id="keychain22" data-name="We Bare Bears" data-price="150 set" data-img="keychains/webarebears.jpg">
-      <img src="keychains/webarebears.jpg" alt="Keychain">
+ <div class="product-card" data-id="keychain21" data-name="Mini Bouquet" data-price="120" data-img="keychains/minibouquet.jpg">
+      <img src="keychains/minibouquet.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
          <i class="fas fa-heart like-btn"></i>
           <i class="fas fa-comment"></i>
           <i class="fas fa-shopping-cart cart-btn"></i>
         </div>
-        <p class="product-price">₱150 set</p>
-        <p class="product-name">We Bare Bears</p> 
+        <p class="product-price">₱120</p>
+        <p class="product-name">Mini Bouquet</p> 
       </div>
-    </div>   
+    </div>    
+     <div class="product-card" data-id="keychain22" data-name="Ice Cream" data-price="65" data-img="keychains/icecream.jpg">
+      <img src="keychains/icecream.jpg" alt="Keychain">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱65</p>
+        <p class="product-name">Ice Cream</p> 
+      </div>
+    </div>    
     <div class="product-card" data-id="keychain23" data-name="Whale" data-price="25 each" data-img="keychains/whale.jpg">
       <img src="keychains/whale.jpg" alt="Keychain">
       <div class="product-info">
@@ -643,7 +671,55 @@
         <p class="product-name">Whale</p> 
       </div>
     </div>  
-    <div class="product-card" data-id="keychain24" data-name="Enhypen" data-price="85" data-img="keychains/enhypen.jpg">
+   <div class="product-card" data-id="keychain24" data-name="Star & Moon" data-price="50 per 2 pairs" data-img="keychains/star.jpg">
+      <img src="keychains/star.jpg" alt="Keychain">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱50 per 2 pairs</p>
+        <p class="product-name">Star & Moon</p> 
+      </div>
+    </div>      
+    <div class="product-card" data-id="keychain25" data-name="Granny Keychain" data-price="65" data-img="keychains/grannykeychain.jpg">
+      <img src="keychains/grannykeychain.jpg" alt="Keychain">
+      <div class="product-info">
+        <div class="icons">
+         <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱65</p>
+        <p class="product-name">Granny Square Keychain</p> 
+      </div>
+    </div>   
+     <div class="product-card" data-id="keychain26" data-name="Letter Keychain" data-price="30" data-img="keychains/letterkeychain.jpg">
+      <img src="keychains/letterkeychain.jpg" alt="Keychain">
+      <div class="product-info">
+        <div class="icons">
+         <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱30 each</p>
+        <p class="product-name">Letter Keychain</p> 
+      </div>
+    </div> 
+     <div class="product-card" data-id="keychain27" data-name="Hanging Duck" data-price="60" data-img="keychains/hangingduck.jpg">
+      <img src="keychains/hangingduck.jpg" alt="Keychain">
+      <div class="product-info">
+        <div class="icons">
+         <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱60</p>
+        <p class="product-name">Hanging Duck</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="keychain28" data-name="Enhypen" data-price="85" data-img="keychains/enhypen.jpg">
       <img src="keychains/enhypen.jpg" alt="Keychain">
       <div class="product-info">
         <div class="icons">
@@ -654,7 +730,7 @@
         <p class="product-price">₱85</p>
         <p class="product-name">Enhypen</p> 
       </div>
-    </div>   
+    </div>      
     <div class="product-card" data-id="money1" data-name="10 Bills w/ Chocolate + 12 Satin Rose" data-price="600" data-img="moneybouquets/10bills.jpg">
       <img src="moneybouquets/10bills.jpg" alt="moneybouquets">
       <div class="product-info">
@@ -667,6 +743,7 @@
         <p class="product-name">10 Bills w/ Chocolate + 12 Satin Rose</p>  
       </div>
     </div>
+
     <div class="product-card" data-id="money2" data-name="20 Bills + 4 Satin Rose" data-price="500" data-img="moneybouquets/20bills.jpg">
       <img src="moneybouquets/20bills.jpg" alt="moneybouquets">
       <div class="product-info">
@@ -691,32 +768,7 @@
         <p class="product-name">56 Bills + 7 Satin Rose</p>  
       </div>
     </div>
-    <div class="product-card" data-id="others1" data-name="Doll Dress" data-price="3 for 150" data-img="others/dolldress.jpg" data-category="Others">
-      <img src="others/dolldress.jpg" alt="Doll Dress">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">3 for ₱150</p>
-        <p class="product-name">Doll dress</p> 
-      </div>
-    </div>
-
-    <div class="product-card" data-id="others2" data-name="Make Up Bouquet" data-price="650" data-img="others/makeupbouquet.jpg" data-category="Others">
-      <img src="others/makeupbouquet.jpg" alt="Make Up Bouquet">
-      <div class="product-info">
-        <div class="icons">
-          <i class="fas fa-heart like-btn"></i>
-          <i class="fas fa-comment"></i>
-          <i class="fas fa-shopping-cart cart-btn"></i>
-        </div>
-        <p class="product-price">₱650</p>
-        <p class="product-name">Make Up Bouquet</p> 
-      </div>
-    </div>
-     <div class="product-card" data-id="potted1" data-name="Daisy Potted Plant" data-price="250" data-img="pottedplants/daisy.jpg" data-category="Potted Plants">
+    <div class="product-card" data-id="potted1" data-name="Daisy Potted Plant" data-price="250" data-img="pottedplants/daisy.jpg" data-category="Potted Plants">
       <img src="pottedplants/daisy.jpg" alt="Daisy Potted Plant">
       <div class="product-info">
         <div class="icons">
@@ -740,7 +792,31 @@
         <p class="product-name">Sunflower Potted Plant</p>
       </div>
     </div>
-     <div class="product-card" data-id="pouch1" data-name="Coin Pouch" data-price="75" data-img="pouches/coinpouch.jpg" data-category="Pouches">
+     <div class="product-card" data-id="potted3" data-name="Gerbera Potted Plant" data-price="1250" data-img="pottedplants/gerbera.jpg" data-category="Potted Plants">
+      <img src="pottedplants/gerbera.jpg" alt="Daisy Potted Plant">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱1,250</p>
+        <p class="product-name">Gerbera Potted Plant</p>
+      </div>
+    </div>
+     <div class="product-card" data-id="potted4" data-name="Hanging Plant" data-price="120" data-img="pottedplants/hangingplants.jpg" data-category="Potted Plants">
+      <img src="pottedplants/hangingplants.jpg" alt="Daisy Potted Plant">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱120</p>
+        <p class="product-name">Hanging Plants</p>
+      </div>
+    </div>
+    <div class="product-card" data-id="pouch1" data-name="Coin Pouch" data-price="75" data-img="pouches/coinpouch.jpg" data-category="Pouches">
       <img src="pouches/coinpouch.jpg" alt="Coin Pouch">
       <div class="product-info">
         <div class="icons">
@@ -812,7 +888,43 @@
         <p class="product-name">Pencil Case</p> 
       </div>
     </div>
-     <div class="product-card" data-id="satin1" data-name="1 Satin Rose" data-price="50" data-img="satin/rose1.jpg">
+    <div class="product-card" data-id="pouch7" data-name="Sling Bag1" data-price="200" data-img="pouches/slingbag1.jpg" data-category="Pouches">
+      <img src="pouches/slingbag1.jpg" alt="Pencil Case">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱200</p>
+        <p class="product-name">Shell Sling Bag</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="pouch8" data-name="Sling Bag2" data-price="250" data-img="pouches/slingbag2.jpg" data-category="Pouches">
+      <img src="pouches/slingbag2.jpg" alt="Pencil Case">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱250</p>
+        <p class="product-name">Granny Square Sling Bag</p> 
+      </div>
+    </div>
+     <div class="product-card" data-id="pouch9" data-name="Sling Bag3" data-price="200" data-img="pouches/slingbag3.jpg" data-category="Pouches">
+      <img src="pouches/slingbag3.jpg" alt="Pencil Case">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱200</p>
+        <p class="product-name">3 Colors Sling Bag</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="satin1" data-name="1 Satin Rose" data-price="50" data-img="satin/rose1.jpg">
       <img src="satin/rose1.jpg" alt="Satin">
       <div class="product-info">
         <div class="icons">
@@ -860,6 +972,42 @@
         <p class="product-name">Random Pink Flowers</p>
       </div>
     </div>
+    <div class="product-card" data-id="satin5" data-name="18 Tulips" data-price="1200" data-img="satin/tulips.jpg">
+      <img src="satin/tulips.jpg" alt="Satin">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱1,200</p>
+        <p class="product-name">18 Tulips</p>
+      </div>
+    </div>
+    <div class="product-card" data-id="others1" data-name="Doll Dress" data-price="3 for 150" data-img="others/dolldress.jpg" data-category="Others">
+      <img src="others/dolldress.jpg" alt="Doll Dress">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">3 for ₱150</p>
+        <p class="product-name">Doll dress</p> 
+      </div>
+    </div>
+    <div class="product-card" data-id="others2" data-name="Make Up Bouquet" data-price="650" data-img="others/makeupbouquet.jpg" data-category="Others">
+      <img src="others/makeupbouquet.jpg" alt="Make Up Bouquet">
+      <div class="product-info">
+        <div class="icons">
+          <i class="fas fa-heart like-btn"></i>
+          <i class="fas fa-comment"></i>
+          <i class="fas fa-shopping-cart cart-btn"></i>
+        </div>
+        <p class="product-price">₱650</p>
+        <p class="product-name">Make Up Bouquet</p> 
+      </div>
+    </div>
   </div>
 </section>
 
@@ -892,34 +1040,68 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartButtons = document.querySelectorAll(".cart-btn");
   const categoryName = "All Products";
 
+ // Update Cart Count
   function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     document.getElementById("cart-count").textContent = cart.length;
   }
   updateCartCount();
 
+  // Update Wishlist Count
+  function updateWishlistCount() {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    document.getElementById("wishlist-count").textContent = wishlist.length;
+  }
+  updateWishlistCount();
+
+  /* ❤️ WISHLIST LOGIC */
   likeButtons.forEach(btn => {
     const card = btn.closest(".product-card");
-    const productId = card.dataset.id;
-    if (localStorage.getItem(`like_${productId}`) === "true") {
+
+    const product = {
+      id: card.dataset.id,
+      name: card.dataset.name,
+      price: "₱" + card.dataset.price,
+      image: card.dataset.img,
+      category: categoryName
+    };
+
+    // Set initial heart state
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    if (wishlist.some(item => item.id === product.id)) {
       btn.classList.add("active");
     }
+
     btn.addEventListener("click", () => {
-      btn.classList.toggle("active");
-      localStorage.setItem(`like_${productId}`, btn.classList.contains("active"));
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      const exists = wishlist.find(item => item.id === product.id);
+
+      if (exists) {
+        // Remove from wishlist
+        wishlist = wishlist.filter(item => item.id !== product.id);
+        btn.classList.remove("active");
+      } else {
+        // Add to wishlist
+        wishlist.push(product);
+        btn.classList.add("active");
+      }
+
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      updateWishlistCount(); // Update count after every click
     });
   });
 
+  /* 🛒 CART LOGIC */
   cartButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       const card = btn.closest(".product-card");
       const product = {
         id: card.dataset.id,
         name: card.dataset.name,
-        price: parseFloat(card.dataset.price),
+        price: parseFloat(card.dataset.price.replace(/,/g, '')),
         img: card.dataset.img,
         quantity: 1,
-        category: card.dataset.category || categoryName
+        category: categoryName
       };
 
       let cart = JSON.parse(localStorage.getItem("cart")) || [];

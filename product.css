@@ -70,6 +70,27 @@
   border-color: #ff7ca3;
 }
 
+ #wishlist-count {
+      background: #ff5c8a;
+      color: white;
+      font-size: 0.8em;
+      padding: 2px 6px;
+      border-radius: 50%;
+      position: relative;
+      top: -10px;
+      right: 10px;
+    }
+    .remove {
+      color: #ff5c8a;
+      cursor: pointer;
+    }
+
+/* Make the icon container relative so the badge positions correctly */
+.cart-icon, .wishlist-link {
+  position: relative;
+  display: inline-block;
+}
+
 
 /* Product Grid (Polaroid style, 10 rows × 5 columns) */
 .all-grid {
@@ -107,7 +128,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.95rem;
-  color: #333;
+  color: #000;
 }
 
 .all-grid .icons {
@@ -133,16 +154,18 @@
 }
 
 .product-name {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #333;
+  font-size: 1.5rem;       /* bigger text */
+  font-weight: 600;        /* slightly bolder */
+  color: #000;             /* pure black */
   text-align: center;
 }
 
 .product-price {
-  font-size: 0.95rem;
-  color: #555;
+  font-size: 1.2rem;       /* bigger price */
+  font-weight: 500;        /* optional: make price bold */
+  color: #000;             /* pure black */
   margin: 5px 0 0 0;
+  text-align: center;      /* center it like name */
 }
 
 .icons {

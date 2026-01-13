@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart - JRM's Crochet</title>
+  <title>Wishlists - JRM's Crochet</title>
   <link rel="icon" type="image/png" href="images/favicon.jpg" sizes="512x512">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="wishlists.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 <header>
@@ -53,7 +55,7 @@
     </div>
   </div>
 
-    <div class="right-section">
+      <div class="right-section">
       <a href="cart.html" class="cart-icon">
         <i class="fas fa-shopping-cart"></i>
         <span id="cart-count">0</span>
@@ -64,27 +66,57 @@
       </a>
     </div>
   </div>
-</header>
+  </header>
 
-<section class="cart-section">
-  <div class="shopping-cart">
-    <h2>Shopping Cart</h2>
-    <p class="item-count">0 Items</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Product Details</th>
-          <th>Quantity</th>
-          <th>Price</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody id="cart-items"></tbody>
-    </table>
-    <div class="cart-total">
-      <strong>Total Cost:</strong> <span>₱0</span>
+<!-- WISHLIST PAGE SECTION (same structure as cart) -->
+<section class="wishlist-section-wrapper">
+  <div class="wishlist-container">
+
+    <!-- HEADER -->
+    <div class="wishlist-header">
+      <h1>My Wishlists</h1>
+
+      <div class="wishlist-actions">
+  <div class="filter-sort">
+  <label>
+    Filter by: 
+    <select id="filter-category">
+      <option value="All">All</option>
+      <option value="Amigurumis">Amigurumis</option>
+      <option value="Bouquets">Bouquets</option>
+      <option value="Keychains">Keychains</option>
+      <option value="Money Bouquets">Money Bouquets</option>
+      <option value="Potted Plants">Potted Plants</option>
+      <option value="Pouches">Pouches</option>
+      <option value="Satin">Satin</option>
+      <option value="Others">Others</option>
+    </select>
+  </label>
+  
+  <label>
+    Sort by: 
+    <select id="sort-order">
+      <option value="recent">Recently added</option>
+      <option value="oldest">Oldest</option>
+    </select>
+  </label>
+</div>
+      </div>
     </div>
-    <a href="products.html" class="continue"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+
+    <!-- FAVORITES -->
+    <div class="wishlist-section">
+      <div class="section-header">
+        <span class="collapse-icon"><i class="fas fa-chevron-up"></i></span>
+        <h3>Favorites</h3>
+        <span class="options">Options</span>
+      </div>
+
+      <div id="wishlist-content"></div>
+      </div>
+      <a href="products.html" class="continue"><i class="fas fa-arrow-left"></i> Continue Browsing</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -93,31 +125,157 @@
 </footer>
 
 <script>
-  // Toggle hamburger menu
-  function toggleMenu() {
-    document.querySelector(".nav-links").classList.toggle("active");
+ function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+
+// Wishlist container
+const wishlistContent = document.getElementById("wishlist-content");
+
+// Render wishlist items with filter & sort
+function renderWishlist() {
+  let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  // --- FILTER BY CATEGORY ---
+  const categoryFilterEl = document.getElementById("filter-category");
+  if (categoryFilterEl) {
+    const categoryFilter = categoryFilterEl.value;
+    if (categoryFilter && categoryFilter !== "All") {
+      wishlist = wishlist.filter(item => item.category === categoryFilter);
+    }
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const categoriesBtn = document.getElementById("categories-btn");
-    const dropdownMenu = document.getElementById("dropdown-menu");
-
-    // Dropdown toggle
-    if (categoriesBtn && dropdownMenu) {
-      categoriesBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        dropdownMenu.style.display =
-          dropdownMenu.style.display === "block" ? "none" : "block";
-      });
-
-      document.addEventListener("click", (event) => {
-        if (!categoriesBtn.contains(event.target) && !dropdownMenu.contains(event.target)) {
-          dropdownMenu.style.display = "none";
-        }
-      });
+  // --- SORT BY RECENTLY ADDED ---
+  const sortOrderEl = document.getElementById("sort-order");
+  if (sortOrderEl) {
+    const sortOrder = sortOrderEl.value;
+    if (sortOrder === "recent") {
+      wishlist = wishlist.slice().reverse(); // newest first
+    } else if (sortOrder === "oldest") {
+      wishlist = wishlist.slice(); // original order
     }
+  }
 
-    const tbody = document.getElementById("cart-items");
+  wishlistContent.innerHTML = "";
+
+  if (wishlist.length === 0) {
+    wishlistContent.innerHTML = `
+      <div class="empty-state">
+        <div class="heart-circle">
+          <i class="far fa-heart"></i>
+        </div>
+        <h4>List is empty</h4>
+        <p>You can add items to wish list by clicking <span class="red-heart">❤</span></p>
+        <a href="products.html" class="browse-link">Browse products</a>
+      </div>
+    `;
+    updateWishlistCount();
+    return;
+  }
+
+  wishlist.forEach(item => {
+    wishlistContent.innerHTML += `
+      <div class="wishlist-item" data-id="${item.id}">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="wishlist-info">
+          <strong>${item.name}</strong>
+          <span>${item.price}</span>
+        </div>
+        <div class="wishlist-actions">
+          <button class="move-cart-btn">Add to Cart</button>
+          <i class="fas fa-heart remove-btn"></i>
+        </div>
+      </div>
+    `;
+  });
+
+  attachRemoveEvents();
+  attachMoveToCartEvents();
+  updateWishlistCount();
+}
+
+document.getElementById("filter-category").addEventListener("change", renderWishlist);
+document.getElementById("sort-order").addEventListener("change", renderWishlist);
+
+// Remove from wishlist
+function attachRemoveEvents() {
+  document.querySelectorAll(".remove-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.closest(".wishlist-item").dataset.id;
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      wishlist = wishlist.filter(item => item.id !== id);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      renderWishlist();
+    });
+  });
+}
+
+// Move wishlist item to cart with correct image
+function attachMoveToCartEvents() {
+  document.querySelectorAll(".move-cart-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const itemEl = btn.closest(".wishlist-item");
+      const id = itemEl.dataset.id;
+
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      const product = wishlist.find(p => p.id === id);
+      if (product) {
+        // Ensure the image path is correct
+        let imagePath = product.image;
+        if (!imagePath.includes("/")) {
+          // If the image path is just a file name, prepend the folder
+          imagePath = "amigurumis/" + product.image; 
+          imagePath = "bouquets/" + product.image; 
+          imagePath = "keychains/" + product.image; 
+          imagePath = "moneybouquets/" + product.image; 
+          imagePath = "pottedplants/" + product.image; 
+          imagePath = "pouches/" + product.image; 
+          imagePath = "satin/" + product.image; 
+          imagePath = "others/" + product.image; 
+        }
+
+        const existing = cart.find(p => p.id === product.id);
+        if (existing) existing.quantity++;
+        else cart.push({
+          ...product,
+          image: imagePath, // force correct path
+          quantity: 1,
+          price: parseFloat(product.price.replace(/₱|,/g, ''))
+        });
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+
+        // Remove from wishlist
+        wishlist = wishlist.filter(p => p.id !== id);
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        renderWishlist();
+
+        alert(`${product.name} added to cart!`);
+      }
+    });
+  });
+}
+
+// Update wishlist badge
+function updateWishlistCount() {
+  const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+  document.getElementById("wishlist-count").textContent = wishlist.length;
+}
+
+// Update cart badge
+function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").textContent = cart.length;
+}
+
+// Initial render
+renderWishlist();
+updateCartCount();
+
+  const tbody = document.getElementById("cart-items");
     const totalSpan = document.querySelector(".cart-total span");
     const itemCount = document.querySelector(".item-count");
     const cartCount = document.getElementById("cart-count");
@@ -192,7 +350,7 @@
       localStorage.setItem("cart", JSON.stringify(cart));
       renderCart();
     });
-  });
+
 
   // Update Wishlist Count
   function updateWishlistCount() {

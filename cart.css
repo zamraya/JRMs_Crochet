@@ -9,6 +9,13 @@
   padding: 20px;
 }
 
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  margin-left: auto; 
+}
+
 /* LEFT SIDE - Shopping Cart */
 .shopping-cart {
   flex: 1 1 80%;

@@ -83,6 +83,17 @@
   color: #e85470;
 }
 
+.heart-icon {
+  cursor: pointer;
+  color: #e85470; 
+  font-size: 20px;
+  transition: color 0.2s;
+}
+
+.heart-icon.active {
+  color: #ff69b4; 
+}
+
 .product-info p {
   font-weight: bold;
   color: #333;

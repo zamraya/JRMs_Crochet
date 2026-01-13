@@ -23,7 +23,7 @@ header {
     align-items: center;
     width: 85%;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .left-section {
@@ -257,6 +257,31 @@ nav ul li a {
   text-align: center;
 }
 
+.like-btn.active {
+  color: #e63946;
+}
+
+    #wishlist-count {
+      background: #ff5c8a;
+      color: white;
+      font-size: 0.8em;
+      padding: 2px 6px;
+      border-radius: 50%;
+      position: relative;
+      top: -10px;
+      right: 10px;
+    }
+    .remove {
+      color: #ff5c8a;
+      cursor: pointer;
+    }
+
+/* Make the icon container relative so the badge positions correctly */
+.cart-icon, .wishlist-link {
+  position: relative;
+  display: inline-block;
+}
+
 
 /*contact*/
 .contact {
@@ -400,10 +425,9 @@ form button:hover {
     }
 
     .hamburger {
-        display: block;
-        cursor: pointer;
+        display: none;
         font-size: 22px;
-        margin-left: auto;
+        cursor: pointer;
     }
 
     .right-section {
